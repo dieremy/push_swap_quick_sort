@@ -11,10 +11,8 @@ int	sa(t_stack *stack, int f)
     stack->a[0] = stack->a[1];
     stack->a[1] = tmp;
 	if (f == 1)
-	{
-		stack->moves++;
 		ft_printf("sa\n");
-	}
+	stack->moves++;
 	return (1);
 }
 
@@ -29,10 +27,8 @@ int	sb(t_stack *stack, int f)
     stack->b[0] = stack->b[1];
     stack->b[1] = tmp;
 	if (f == 1)
-	{
-		stack->moves++;
 		ft_printf("sb\n");
-	}
+	stack->moves++;
 	return (1);
 }
 
@@ -50,9 +46,7 @@ int	ss(t_stack *stack, int f)
     stack->b[0] = stack->b[1];
     stack->b[1] = tmp;
 	if (f == 1)
-	{
-		stack->moves++;
 		ft_printf("ss\n");
-	}
+	stack->moves++;
 	return (1);
 }

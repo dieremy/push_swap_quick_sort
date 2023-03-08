@@ -11,10 +11,8 @@ int	rra(t_stack *stack, int f)
 		stack->a[len] = stack->a[len - 1];
     stack->a[0] = tmp;
 	if (f == 1)
-	{
-		stack->moves++;
 		ft_printf("rra\n");
-	}
+	stack->moves++;
 	return (1);
 }
 
@@ -30,10 +28,8 @@ int	rrb(t_stack *stack, int f)
 		stack->b[len] = stack->b[len - 1];
     stack->b[0] = tmp;
 	if (f == 1)
-	{
-		stack->moves++;
-		ft_printf("rrb");
-	}
+		ft_printf("rrb\n");
+	stack->moves++;
 	return (1);
 }
 
@@ -54,9 +50,7 @@ int	rrr(t_stack *stack, int f)
 		stack->b[len] = stack->b[len - 1];
     stack->b[0] = tmp;
 	if (f == 1)
-	{
-		stack->moves++;
 		ft_printf("rrr\n");
-	}
+	stack->moves++;
 	return (1);
 }

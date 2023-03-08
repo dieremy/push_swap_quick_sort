@@ -62,10 +62,7 @@ int	median_of_numbers(int *pivot, int *stack, int dim)
 int	sort_3_b(t_stack *stack, int dim)
 {
 	if (dim == 1)
-	{
-		ft_printf("fellow\n");
 		pa(stack, 1);
-	}
 	else if (dim == 2)
 	{
 		if (stack->b[0] < stack->b[1])

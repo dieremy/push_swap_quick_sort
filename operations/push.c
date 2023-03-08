@@ -21,10 +21,8 @@ int	pa(t_stack *stack, int f)
 	}
 	stack->len_B--;
 	if (f == 1)
-	{
-		stack->moves++;
 		ft_printf("pa\n");
-	}
+	stack->moves++;
 	return (1);
 }
 
@@ -49,9 +47,7 @@ int	pb(t_stack *stack, int f)
 	}
 	stack->len_A--;
 	if (f == 1)
-	{
-		stack->moves++;
 		ft_printf("pb\n");
-	}
+	stack->moves++;
 	return (1);
 }
