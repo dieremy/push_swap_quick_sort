@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
+#include <time.h>
 
 void	print_arraya(t_stack *stack, int len)
 {
@@ -101,7 +102,7 @@ void	lil_sort(t_stack *stack)
 
 int	sort(t_stack *stack)
 {
-	if (check_sorted_asc(stack->a, stack->len_A) == 0)
+	if (!check_sorted_asc(stack->a, stack->len_A))
 	{
 		if (stack->len_A == 2)
 			sa(stack, 1);
@@ -122,6 +123,21 @@ int main(int ac, char **av)
 	stack = init(ac, av);
 	print_arraya(stack, stack->len_A);
 	print_arrayb(stack, stack->len_B);
+	// (void)ac;
+	// (void)av;
+	// stack = malloc(sizeof(t_stack));
+	// stack->a = malloc(sizeof(int) * 500);
+	// stack->b = malloc(sizeof(int) * 500);
+	// int i = 0;
+	// while (i < 500)
+	// {
+	// 	stack->a[i] = (rand() % (3000 - 1));
+	// 	ft_printf("(%d) %d ", i, stack->a[i]);
+	// 	i++;
+	// }
+	// stack->len_A = i;
+	// stack->len_B = 0;
+	// stack->moves = 0;
 	sort(stack);
 	ft_printf("\n\n=========================================\n\n");
 	print_arraya(stack, stack->len_A);

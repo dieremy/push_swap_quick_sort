@@ -23,7 +23,7 @@ int	sb(t_stack *stack, int f)
 {
 	int		tmp;
 	
-	if (!stack->b[0] || !stack->b[1])
+	if (stack->len_B == 0 || stack->len_B == 1)
 		return (0);
 	tmp = stack->b[0];
     stack->b[0] = stack->b[1];
