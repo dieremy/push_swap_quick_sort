@@ -117,7 +117,7 @@ int main(int ac, char **av)
 {
 	t_stack	*stack;
 	
-	if (ac <= 2)
+	if (ac < 2)
 		return (0);
 	stack = init(ac, av);
 	print_arraya(stack, stack->len_A);
