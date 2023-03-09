@@ -144,4 +144,5 @@ int main(int ac, char **av)
 	// print_arrayb(stack, stack->len_B);
 	// ft_printf("\n\nmoves--> %d\n\n", stack->moves);
 	ft_exit(stack);
+	return (0);
 }
