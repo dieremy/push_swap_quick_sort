@@ -14,8 +14,8 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
-# include "../ft_printf/ft_printf.h"
-# include "../libft/libft.h"
+# include "ft_printf/ft_printf.h"
+# include "libft/libft.h"
 
 typedef struct s_stack {
 	int	*a;
@@ -27,6 +27,7 @@ typedef struct s_stack {
 
 t_stack	*init(int ac, char **av);
 void	fill_stack(int ac, char **av, int i, t_stack *stack);
+void	print_arraya(t_stack *stack, int len);
 void	tmp_sort(int *tmp_stk, int dim);
 void	check_doubles(int *a, int dim);
 void	lil_sort(t_stack *stack);
