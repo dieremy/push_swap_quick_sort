@@ -1,5 +1,4 @@
 #include "../incl/push_swap.h"
-#include <string.h>
 
 int	esc_error(t_stack *stack)
 {
