@@ -124,12 +124,12 @@ int	quick_sort_a(t_stack *stack, int dim, int count_r)
 	if (check_sorted_asc(stack->a, dim) == 1)
 		return (1);
 	numbers = dim;
-	if (dim <= 3) //check cause on recursion this should be the exit
+	if (dim <= 3)
 	{
 		quick_sort_3_a_b(stack, dim);
 		return (1);
 	}
-	if (!count_r && !median_of_numbers(&pivot, stack->a, dim))//maybe median is partition()?
+	if (!count_r && !median_of_numbers(&pivot, stack->a, dim))
 		return (0);
 	while (dim != numbers / 2 + numbers % 2)
 	{
