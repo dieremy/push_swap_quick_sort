@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: robegarc <robegarc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/11 14:55:01 by robegarc          #+#    #+#             */
+/*   Updated: 2023/03/11 15:40:29 by robegarc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incl/push_swap.h"
 
 void	tmp_sort(int *tmp_stk, int dim)
@@ -40,7 +52,7 @@ int	check_sorted_desc(int *stack, int dim)
 
 int	check_sorted_asc(int *stack, int dim)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < dim)
@@ -50,4 +62,14 @@ int	check_sorted_asc(int *stack, int dim)
 		i++;
 	}
 	return (1);
+}
+
+int	when_push(t_stack *stack, int dim, int f)
+{
+	if (f == 1)
+		pb(stack, 1);
+	else if (f == 0)
+		pa(stack, 1);
+	dim--;
+	return (dim);
 }

@@ -16,6 +16,11 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+# include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -52,6 +57,14 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+
+char	*ft_sjoin(char *s1, char *s2);
+char	*get_line(int fd, char *line);
+char	*get_new_line(char *line);
+char	*ft_schr(char *s, int c);
+char	*get_next_line(int fd);
+char	*new_line(char *line);
+int		ft_slen(char *s);
 
 typedef struct s_list
 {

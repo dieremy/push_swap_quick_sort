@@ -1,51 +1,61 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: robegarc <robegarc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/11 14:46:09 by robegarc          #+#    #+#             */
+/*   Updated: 2023/03/11 15:37:50 by robegarc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incl/push_swap.h"
 
-/*push a - take the first element at the top of b and put it at the top of a. Do nothing if b is empty.*/
 int	pa(t_stack *stack, int f)
 {
 	int	len;
 
-	len = stack->len_A;
+	len = stack->len_a;
 	while (len > 0)
 	{
 		stack->a[len] = stack->a[len - 1];
 		len--;
 	}
-	stack->len_A++;
+	stack->len_a++;
 	stack->a[0] = stack->b[0];
 	len = 1;
-	while (len < stack->len_B)
+	while (len < stack->len_b)
 	{
 		stack->b[len - 1] = stack->b[len];
 		len++;
 	}
-	stack->len_B--;
+	stack->len_b--;
 	if (f == 1)
 		ft_printf("pa\n");
 	stack->moves++;
 	return (1);
 }
 
-/*push b - take the first element at the top of a and put it at the top of b. Do nothing if a is empty.*/
 int	pb(t_stack *stack, int f)
 {
-    int	len;
+	int	len;
 
-	len = stack->len_B;
+	len = stack->len_b;
 	while (len > 0)
 	{
 		stack->b[len] = stack->b[len - 1];
 		len--;
 	}
-	stack->len_B++;
+	stack->len_b++;
 	stack->b[0] = stack->a[0];
 	len = 1;
-	while (len < stack->len_A)
+	while (len < stack->len_a)
 	{
 		stack->a[len - 1] = stack->a[len];
 		len++;
 	}
-	stack->len_A--;
+	stack->len_a--;
 	if (f == 1)
 		ft_printf("pb\n");
 	stack->moves++;
