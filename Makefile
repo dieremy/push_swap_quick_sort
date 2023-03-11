@@ -6,7 +6,7 @@
 #    By: robegarc <robegarc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 10:37:31 by robegarc          #+#    #+#              #
-#    Updated: 2023/03/01 12:20:23 by robegarc         ###   ########.fr        #
+#    Updated: 2023/03/11 12:31:07 by robegarc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,6 @@ fclean : clean
 	@rm -f $(NAME)
 	@rm -f $(NAME_B)
 	
-re : fclean all
+re : fclean all bonus
 
 .PHONY: all clean fclean re

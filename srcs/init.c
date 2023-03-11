@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: robegarc <robegarc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/11 14:54:53 by robegarc          #+#    #+#             */
+/*   Updated: 2023/03/11 15:30:23 by robegarc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incl/push_swap.h"
 
 void	fill_stack(int ac, char **av, int i, t_stack *stack)
 {
-	int j;
-	
+	int	j;
+
 	stack->a = (int *)malloc(sizeof(int) * (ac - 1));
 	stack->b = (int *)malloc(sizeof(int) * (ac - 1));
 	j = 0;
 	while (i < ac)
 		stack->a[j++] = ft_atoi(av[i++], stack->a);
 	check_doubles(stack->a, j);
-	stack->len_A = j;
-	stack->len_B = 0;
+	stack->len_a = j;
+	stack->len_b = 0;
 	stack->moves = 0;
 }
 
@@ -19,7 +31,7 @@ t_stack	*init(int ac, char **av)
 {
 	char	**tmp;
 	int		len;
-	t_stack *stack;
+	t_stack	*stack;
 
 	tmp = NULL;
 	len = 0;
@@ -44,39 +56,39 @@ t_stack	*init(int ac, char **av)
 
 void	lil_sort(t_stack *stack)
 {
-	if ((stack->a[0] < stack->a[1]) && (stack->a[0] < stack->a[2]) &&
-	 (stack->a[1] > stack->a[2]))
+	if ((stack->a[0] < stack->a[1]) && (stack->a[0] < stack->a[2])
+		&& (stack->a[1] > stack->a[2]))
 	{
 		sa(stack, 1);
 		ra(stack, 1);
 	}
-	else if ((stack->a[0] > stack->a[1]) && (stack->a[0] > stack->a[2]) &&
-	 (stack->a[1] > stack->a[2]))
+	else if ((stack->a[0] > stack->a[1]) && (stack->a[0] > stack->a[2])
+		&& (stack->a[1] > stack->a[2]))
 	{
 		sa(stack, 1);
 		rra(stack, 1);
 	}
-	else if ((stack->a[0] < stack->a[1]) && (stack->a[0] > stack->a[2]) &&
-	 (stack->a[1] > stack->a[2]))
+	else if ((stack->a[0] < stack->a[1]) && (stack->a[0] > stack->a[2])
+		&& (stack->a[1] > stack->a[2]))
 		rra(stack, 1);
-	else if ((stack->a[0] > stack->a[1]) && (stack->a[0] > stack->a[2]) &&
-	 (stack->a[1] < stack->a[2]))
+	else if ((stack->a[0] > stack->a[1]) && (stack->a[0] > stack->a[2])
+		&& (stack->a[1] < stack->a[2]))
 		ra(stack, 1);
-	else if ((stack->a[0] > stack->a[1]) && (stack->a[0] < stack->a[2]) &&
-	 (stack->a[1] < stack->a[2]))
+	else if ((stack->a[0] > stack->a[1]) && (stack->a[0] < stack->a[2])
+		&& (stack->a[1] < stack->a[2]))
 		sa(stack, 1);
 }
 
 int	sort(t_stack *stack)
 {
-	if (!check_sorted_asc(stack->a, stack->len_A))
+	if (!check_sorted_asc(stack->a, stack->len_a))
 	{
-		if (stack->len_A == 2)
+		if (stack->len_a == 2)
 			sa(stack, 1);
-		else if (stack->len_A == 3)
+		else if (stack->len_a == 3)
 			lil_sort(stack);
 		else
-			quick_sort_a(stack, stack->len_A, 0);
+			quick_sort_a(stack, stack->len_a, 0);
 	}
 	return (0);
 }
