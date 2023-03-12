@@ -25,6 +25,9 @@ FT_PRINTF = incl/ft_printf
 LIBFT = incl/libft
 LIBRARY = incl/ft_printf/libftprintf.a incl/libft/libft.a
 
+.c.o:
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
 all	: $(NAME)
 
 $(NAME) : $(OBJ)
