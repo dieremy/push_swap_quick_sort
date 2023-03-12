@@ -39,7 +39,7 @@ void	quick_sort_3_a_b(t_stack *stack, int dim)
 	}
 }
 
-int	median_of_numbers(int *pivot, int *stack, int dim)
+int	partition(int *pivot, int *stack, int dim)
 {
 	int	*tmp;
 	int	i;
@@ -100,7 +100,7 @@ int	quick_sort_b(t_stack *stack, int dim, int count_r)
 		return (1);
 	}
 	numbers = dim;
-	if (!median_of_numbers(&pivot, stack->b, dim))
+	if (!partition(&pivot, stack->b, dim))
 		return (0);
 	while (dim != numbers / 2)
 	{
@@ -128,7 +128,7 @@ int	quick_sort_a(t_stack *stack, int dim, int count_r)
 		quick_sort_3_a_b(stack, dim);
 		return (1);
 	}
-	if (!count_r && !median_of_numbers(&pivot, stack->a, dim))
+	if (!count_r && !partition(&pivot, stack->a, dim))
 		return (0);
 	while (dim != numbers / 2 + numbers % 2)
 	{

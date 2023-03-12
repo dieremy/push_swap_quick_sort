@@ -16,8 +16,8 @@ int	esc_error(t_stack *stack)
 {
 	free(stack->a);
 	free(stack->b);
-	ft_printf("ERROR\n");
-	exit(2);
+	write(2, "Error\n", 6);
+	exit(0);
 }
 
 int	ft_strcmp(char *a, char *b)

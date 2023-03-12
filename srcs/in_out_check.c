@@ -29,7 +29,7 @@ int	ft_isdigit(int c)
 void	print_error(int *stack)
 {
 	free(stack);
-	ft_printf("ERROR\n");
+	write(2, "Error\n", 6);
 	exit(0);
 }
 
