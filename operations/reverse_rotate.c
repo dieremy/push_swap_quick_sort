@@ -19,8 +19,11 @@ int	rra(t_stack *stack, int f)
 
 	tmp = stack->a[stack->len_a - 1];
 	len = stack->len_a;
-	while (len-- > 0)
+	while (len > 0)
+	{
 		stack->a[len] = stack->a[len - 1];
+		len--;
+	}
 	stack->a[0] = tmp;
 	if (f == 1)
 		ft_printf("rra\n");
